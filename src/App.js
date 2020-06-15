@@ -1,26 +1,22 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./App.css";
 
-function App() {
+import Searchbar from "./components/Searchbar";
+import BooksContainer from "./components/BooksContainer";
+import { BooksProvider } from "./context/Context";
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='app'>
+      <h3 className='text-center pb-3 pt-4 title'>Book Finder</h3>
+
+      <BooksProvider>
+        <Searchbar />
+        <BooksContainer />
+      </BooksProvider>
     </div>
   );
-}
+};
 
 export default App;
